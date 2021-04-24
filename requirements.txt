@@ -9,3 +9,4 @@ virtualenv
 email_validator
 python-dotenv
 mysql-client
+Flask-Migrate
