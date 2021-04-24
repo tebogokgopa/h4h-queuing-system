@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script>
+        var images = [ 
+    "../static/images/pic.jpg",
+    "../static/images/pic-1.jpg", 
+    "../static/images/pic-2.jpg"
+        ];
+        var num = 0;
+        function next() {
+            var slider = document.getElementById('imgHome');
+            num++;
+            if(num >= images.length) {
+                num = 0;
+            }
+            slider.src = images[num];
+        }
+        function prev() {
+            var slider = document.getElementById('imgHome');
+            num--;
+            if(num < 0) {
+                num = images.length-1;
+            }
+            slider.src = images[num];
+        }
+
+
+    </script>
+    
+    <!-- Google Materalize fonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>i-Queued | Easy Access to Healthcare</title>
+</head>
+<body onload="setInterval(next, 3000)">
+    <nav>
+        <div class="nav-wrapper" style="background-color: blue">
+          <a href="/" class="brand-logo center"><img class="responsive" style="height: 50px; padding: 5px; margin-top: 8px;" src="../static/images/white-logo.png" alt="Logo"></a>
+          <ul class="left hide-on-med-and-down">
+            <li><a class="white-text" href="/signup">Sign Up</a></li>
+            <li><a class="white-text" href="/login">Login</a></li>
+            <li class="active"><a class="white-text" href="/demo">See it in Action!</a></li>
+          </ul>
+        </div>
+      </nav>
+    {% block body %} 
+    {% endblock %}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+    .book-btn {
+        margin-left: 40px;
+    }
+
+    .login-text {
+        text-align: center;
+    }
+
+    .login-btn {
+        background: blue;
+        color: white;
+        margin-left: 80px;
+    }
+
+    .login-block {
+        width: 50%;
+        float: right;
+        background-color: blue;
+        color: white;
+        height: 96vh;
+    }
+
+    .input-row {
+        display: flex;
+        flex-direction: column;
+    }
+
+   .main-form {
+       width: 100%;
+       padding: 4px;
+       margin-left: 108px;
+   }
+
+   .images-home {
+       margin: 10px 0px 0px 10px;
+   }
+
+   .form-title {
+       color: blue;
+   }
+
+   .home-container {
+       display: flex;
+       flex-direction: row;
+       float: left;
+   }
+
+   .img-home {
+       width: 49em;
+       margin-left: 120px;
+   }

@@ -1,0 +1,30 @@
+{% extends 'auth.html' %}
+{% block body %}
+    <div style="background-image: url('../static/images/pic-5.jpg'); width: 100%; height: 100vh">
+       
+        <div class="login-block" style="width: 30%; background-color: blue; padding: 20px; margin-left: 480px; height: 100%">
+            <a href="/" class="brand-logo"><img style="width: 240px; margin-left: 80px" src="{{ url_for('static', filename='images/white-logo.png') }}" alt="Logo" /></a>
+            <br>
+            <h4 style="text-align: center; color: white">Login</h4>
+            <br>
+            <div class="email input-field">
+                {{ form.email(placeholder="Email Address") }}
+              </div>
+              
+              <div class="password input-field">
+                  {{ form.password(placeholder="Password") }}
+              </div>
+              <br>
+              
+                {{ form.hidden_tag() }}
+                <span>{{ form.remember_me }}</span> 
+                <div>
+                    <button type="submit" class="btn-large white-text" style="margin-left: 140px; background-color: blue; border: 1px solid white;">Login</button>
+                </div>
+                <br>
+                <a href="/signup" class="white-text" style="margin-left: 80px">Not Yet registered? <u>Register</u></a>
+              
+        </div>
+        
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<div class="container-fluid">
+  <div class="row home-container">
+            <div class="col-xs-6">
+<form class="form main-form" action="/register">
+      <h3 class="form-title">Queue Marshall Login!</h3>
+      {{ form.csrf_token }}
+     
+      <div class="email input-field">
+        <span><i class="material-icons prefix" style="color: blue;">email</i>{{ form.email(placeholder="Email Address") }}</span>
+      </div>
+        
+      <div class="password input-field">
+        <span><i class="material-icons prefix" style="color: blue;">person</i>{{ form.password(placeholder="Password") }}</span>
+      </div>
+       
+      
+      
+      <div class="btn-large blue" style="margin-left: 160px;">
+        LOgin
+      </div>
+      
+    </form>
+         </div>
+            <div class="col-xs-6 images-home">
+              <p class="img-holder" style="text-align: right;">
+                <img class="img-home" id="imgHome" src="../static/images/pic.jpg" alt="Picture">
+              </p>
+            </div>
+        </div>
+    
+    </div>
+  {% endblock %}

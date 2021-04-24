@@ -1,0 +1,39 @@
+{% extends 'auth.html' %}
+{% block body %}
+<div class="" style="display: flex; flex-direction: row; background-image: url('../static/images/pic-6.jpg');">
+    <div class="" style="background-color: blue; height: 100vh; width: 50%; padding: 20px">
+        <a href="/" class="brand-logo"><img style="width: 240px; margin-left: 160px" src="{{ url_for('static', filename='images/white-logo.png') }}" alt="Logo" /></a>
+     
+            <h4 style="color: white; margin-left: 160px">Register an Account</h4>
+        
+        <div class="">
+            <form class="form" action="/register">
+                {{ form.csrf_token }}
+                <div class="input-row">
+                    <div class="firstname input-field">
+                        <span><i class="material-icons prefix" style="color: white">person</i>{{ form.firstName(placeholder="First Name") }}</span>
+                      </div>
+                      <div class="lastname input-field">
+                        <span><i class="material-icons prefix" style="color: white">perm_identity</i>{{ form.lastName(placeholder="Last Name") }}</span>
+                      </div>
+                </div>
+                
+                <div class="email input-field">
+                  <span><i class="material-icons prefix" style="color: white;">email</i>{{ form.email(placeholder="Email Address") }}</span>
+                </div>
+                  
+                  <div class="phone input-field">
+                    <span><i class="material-icons prefix icon-font" style="color: white;">phone</i>{{ form.phone(placeholder="Phone Number", id="icon_prefix") }}</span>
+                  </div>
+                
+                <div class="btn-large white" style="margin-left: 288px;">
+                  <span class="blue-text"><strong style="font-weight: bolder;">Register</strong></span>
+                </div>
+
+                <a href="/login" class="white-text" style="margin-left: 272px; display: block">Already registered? <u>Login</u></a>
+                
+              </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
