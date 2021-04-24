@@ -31,6 +31,8 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db = SQLAlchemy(app)
 
+db.init_app(app)
+
 db.create_all()
 
 #csrf = CSRFProtect(app)
