@@ -41,7 +41,6 @@ app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
-    id = db.Column(db.String(80), primary_key=True)
     firstname = db.Column(db.String(80), unique=False, nullable=False)
     lastname = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
