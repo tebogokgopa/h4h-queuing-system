@@ -6,10 +6,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required, logout_user, login_user, current_user
 from flask_wtf.csrf import CSRFProtect
 from werkzeug.security import generate_password_hash, check_password_hash
-from dotenv import load_env 
+ 
 import os 
-
-load_env()
 
 class RegisterForm(FlaskForm):
     firstName = StringField(label="First Name", validators=[DataRequired()])
