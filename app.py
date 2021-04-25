@@ -25,7 +25,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://b3c105d8-7951-9:f3d2734e-6e45-2@https://h4h-queuing-system-edsnwb.codecapsules.co.za/data-capsule-zgmfcr"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://b3c105d8-7951-9:f3d2734e-6e45-2@https://data-capsule-zgmfcr.codecapsules.co.za/data-capsule-zgmfcr"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
