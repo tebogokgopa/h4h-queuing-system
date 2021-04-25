@@ -31,7 +31,7 @@ port = int(3306)
 
 db_url = "mysql://sql4407863:qEhcLAiTcl@https://sql4.freemysqlhosting.net:{}/sql4407863".format(port)
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 
+app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", False)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
