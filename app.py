@@ -7,6 +7,7 @@ from flask_login import UserMixin, LoginManager, login_required, logout_user, lo
 from flask_wtf.csrf import CSRFProtect
 from werkzeug.security import generate_password_hash, check_password_hash
 from dotenv import load_env 
+import os 
 
 load_env()
 
@@ -28,7 +29,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "DATABASE_URL"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql://root:4b9acabe-b194-c26e-be44-e5faeddb59a8@https://data-capsule-zgmfcr.codecapsules.co.za:3306/data-capsule-zgmfcr"
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL", False)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
