@@ -31,22 +31,23 @@ app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db = SQLAlchemy(app)
 
-#db.init_app(app)
-
 db.create_all()
 
-#csrf = CSRFProtect(app)
+csrf = CSRFProtect(app)
 
-#login_manager = LoginManager()
-#login_manager.session_protection = 'strong'
-#login_manager.login_view = 'login'
+login_manager = LoginManager()
+login_manager.session_protection = 'strong'
+login_manager.login_view = 'login'
+
+login_manager.init_app(app)
 
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
-    firstname = db.Column(db.Integer, unique=False, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    firstname = db.Column(db.String(80), unique=False, nullable=False)
     lastname = db.Column(db.String(120), unique=False, nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
-    phone = db.Column(db.String(120), unique=True, nullable=True)
+
     password_hash = db.Column(db.String(128))
 
     @property
@@ -62,7 +63,6 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.firstname
-
 
 @app.route('/', methods=["GET", "POST"])
 
