@@ -6,6 +6,9 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, LoginManager, login_required, logout_user, login_user, current_user
 from flask_wtf.csrf import CSRFProtect
 from werkzeug.security import generate_password_hash, check_password_hash
+from dotenv import load_env 
+
+load_env()
 
 class RegisterForm(FlaskForm):
     firstName = StringField(label="First Name", validators=[DataRequired()])
@@ -25,13 +28,13 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:4b9acabe-b194-c26e-be44-e5faeddb59a8@https://data-capsule-zgmfcr.codecapsules.co.za:3306/data-capsule-zgmfcr"
+app.config['SQLALCHEMY_DATABASE_URI'] = "DATABASE_URL"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db = SQLAlchemy(app)
 
-db.create_all()
+#db.create_all()
 
 csrf = CSRFProtect(app)
 
@@ -63,6 +66,10 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return '<User %r>' % self.firstname
+
+@login_manager.user_loader
+def load_user(id):
+    return User.query.get(int(id))
 
 @app.route('/', methods=["GET", "POST"])
 
