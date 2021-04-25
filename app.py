@@ -27,6 +27,8 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
+
+"""
 port = int(3306)
 
 db_url = "mysql://sql4407863:qEhcLAiTcl@https://sql4.freemysqlhosting.net:{}/sql4407863".format(port)
@@ -73,7 +75,7 @@ class User(UserMixin, db.Model):
 
 @login_manager.user_loader
 def load_user(id):
-    return User.query.get(int(id))
+    return User.query.get(int(id))"""
 
 @app.route('/', methods=["GET", "POST"])
 
