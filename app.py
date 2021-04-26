@@ -34,6 +34,10 @@ def index():
     form = LoginForm()
     return render_template("index.html", form=form)
 
+@app.route('/queue', methods=["GET", "POST"])
+def queue():
+    return render_template("queue.html")
+
 @app.route('/login', methods=["GET", "POST"] )
 def login():
     form = LoginForm()
