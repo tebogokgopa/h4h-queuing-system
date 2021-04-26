@@ -23,8 +23,21 @@
             flex-direction: row;
         }
 
+        .id-number {
+            margin-top: -80px;
+        }
+
         .tbl-txt {
             background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .td-style {
+            line-height: 81px;
         }
 
         .main-table {
@@ -85,12 +98,33 @@
        <p class="top-table" align="left" style="margin-left: 80px;">1 Patient in the queue | Average waiting time of 20 minutes</p>
        <table class="main-table responsive-table">
             <tr>
-                <th style=" padding: 4px">
-                    <td><strong class="tbl-txt">Queue</strong></td>
-                    <td><strong class="tbl-txt">Patient</strong></td>
-                    <td><strong class="tbl-txt">Contact Number</strong></td>
-                    <td><strong class="tbl-txt">Logged by</strong></td>
-                </th>
+                
+                    <th><strong class="tbl-txt">Queue</strong></th>
+                    <th><strong class="tbl-txt">Patient</strong></th>
+                    <th><strong class="tbl-txt">Contact Number</strong></th>
+                    <th><strong class="tbl-txt">Logged by</strong></th>
+                
+            </tr>
+            <tr>
+                <td class="white">
+                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">Registration</span></span>
+                </td>
+                <td class="white td-style"><div>
+                    <ul style="list-style: none; line-height: 120%">
+                        <li>Aviwe Ntloko</li>
+                        <li>ID Number: 8507310000000</li>
+                    </ul>   
+                    
+                        
+                </div></td>
+                <td class="white td-style" style="text-align: center">072 876 1234</td>
+                <td class="white td-style">
+                    <ul style="list-style: none; line-height: 120%; text-align: center">
+                        <li>Lee-anne Matthews (AA78291)</li>
+                        <li>at 7:21am</li>
+                    </ul>
+                </td>
+                <td class="white td-style"></td>
             </tr>
        </table> 
     </div>
