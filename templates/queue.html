@@ -105,6 +105,7 @@
                     <th colspan="2"><strong class="tbl-txt">Logged by</strong></th>
                 
             </tr>
+            {% for patient in patient_list %}
             <tr>
                 <td class="white">
                     <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">Registration</span></span>
@@ -120,7 +121,7 @@
                 <td class="white td-style" style="text-align: center">072 876 1234</td>
                 <td class="white td-style">
                     <ul style="list-style: none; line-height: 120%; text-align: center">
-                        <li>Lee-anne Matthews (AA78291)</li>
+                        <li>{{ patient.logged_by }}</li>
                         <li>at 7:21am</li>
                     </ul>
                     
@@ -128,6 +129,7 @@
                 
                 <td class="white td-style"><i class="material-icons">crop_square</i></td>
             </tr>
+            {% endfor %}
        </table> 
     </div>
 </body>
