@@ -1,12 +1,4 @@
 Flask
 Flask-Login
-Flask-Bootstrap
-Flask-Mail
-Flask-SQLAlchemy
 Flask-WTF
-Flask-Cors
-virtualenv
-email_validator
-python-dotenv
-mysql-client
-Flask-Migrate
+Flask-Session
