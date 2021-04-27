@@ -56,8 +56,8 @@
             <div class="right-wrapper" style="display: flex; flex-direction: column">
                 <li class="nav-item" style="margin-left: 540px">
                     <span><strong style="margin-left: 72px; margin-right: -80px;">Lee-anne Matthews (AA78291)</strong>
-                        <button type="button" style="border-radius: 30px; color: rgb(14, 74, 88); border: 1px solid rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 120px; margin-top: -80px; height: 40px">
-                        Logout
+                       <button type="button" style="border-radius: 30px; color: rgb(14, 74, 88); border: 1px solid rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 120px; margin-top: -80px; height: 40px">
+                        <a href="/logout" style="color: rgb(14, 74, 88); font-weight: bold">Logout</a>
                     </button></span>
                 </li>
             </div>
@@ -108,7 +108,7 @@
             {% for i in range(0, len) %}
             <tr>
                 <td class="white">
-                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">{{ patient_list[i].queue }}</span></span>
+                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center; word-break: normal">{{ patient_list[i].queue }}</span></span>
                 </td>
                 <td class="white td-style"><div>
                     <ul style="list-style: none; line-height: 120%">
