@@ -28,21 +28,22 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFOm65r3XmYKWjw3Vs'
 
 class Patient:
-    def __init__(self, firstname="", lastname="", id_number="", contact_number="", logged_by="", queue=""):
+    def __init__(self, firstname="", lastname="", id_number="", contact_number="", logged_by="", queue="", logged_time=""):
         self.firstname = firstname
         self.lastname = lastname
         self.id_number = id_number
         self.contact_number = contact_number
         self.logged_by = logged_by
         self.queue = queue 
+        self.logged_time = logged_time
     
   
 
-patient_1 = Patient("Aviwe", "Ntloko", "8507310000000", "072 876 1234", "Lee-anne Matthews (AA78291)", "Registration")
-patient_2 = Patient("Nazeem", "Parker", "7205020000000", "", "Lee-anne Matthews (AA78291)", "Vital Signs")
-patient_3 = Patient("Warren", "Edwards", "9901020000000", "", "Lee-anne Matthews (AA78291)", "Doctor’s consultation")
-patient_4 = Patient("Jade Marie", "Peters", "8906060000000", "", "Lee-anne Matthews (AA78291)", "Pharmacy")
-patient_5 = Patient("Wade", "Peters", "8906060000000", "", "Lee-anne Matthews (AA78291)", "Pharmacy")
+patient_1 = Patient("Aviwe", "Ntloko", "8507310000000", "072 876 1234", "Lee-anne Matthews (AA78291)", "Registration", "7:21am")
+patient_2 = Patient("Nazeem", "Parker", "7205020000000", "", "Lee-anne Matthews (AA78291)", "Vital Signs", "8:32am")
+patient_3 = Patient("Warren", "Edwards", "9901020000000", "", "Lee-anne Matthews (AA78291)", "Doctor’s consultation", "8:56am")
+patient_4 = Patient("Jade Marie", "Peters", "8906060000000", "", "Lee-anne Matthews (AA78291)", "Pharmacy", "9:13am")
+patient_5 = Patient("Wade", "Peters", "8906060000000", "", "Lee-anne Matthews (AA78291)", "Pharmacy", "9:30am")
 
 patient_list = [patient_1, patient_2, patient_3, patient_4, patient_5]
 
@@ -54,7 +55,7 @@ def index():
 
 @app.route('/queues', methods=["GET", "POST"])
 def queue():
-    return render_template("queues.html", patient_list=patient_list)
+    return render_template('queues.html',len = len(patient_list), patient_list=patient_list)
 
 @app.route('/add-patient', methods=["GET", "POST"])
 def add():

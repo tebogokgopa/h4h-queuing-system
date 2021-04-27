@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../static/css/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"> 
-    <title>mediQ | Queues</title>
+    <title>mediQ | Queue</title>
     <style>
         .main-nav {
             color: rgb(14, 74, 88);
@@ -67,7 +67,7 @@
     <br>
     <br>
     <div style="margin-top: 40px; padding: 10px; margin-left: 80px;">
-        <span><h4 style="color:rgb(14, 74, 88); display: inline; margin-right: -80px">Queues</h4><a href="/add-patient"><button type="button" style="border-radius: 30px; color: white; border: 1px solid white; background-color: rgb(14, 74, 88); width: 157px; margin-left: 880px; margin-top: -80px; height: 30px">
+        <span><h4 style="color:rgb(14, 74, 88); display: inline; margin-right: -80px">Queue</h4><a href="/add-patient"><button type="button" style="border-radius: 30px; color: white; border: 1px solid white; background-color: rgb(14, 74, 88); width: 157px; margin-left: 880px; margin-top: -80px; height: 30px">
             + Add Patient
         </button></a></span>
     </div>
@@ -105,24 +105,24 @@
                     <th colspan="2"><strong class="tbl-txt">Logged by</strong></th>
                 
             </tr>
-            {% for patient in patient_list %}
+            {% for i in range(0, len) %}
             <tr>
                 <td class="white">
                     <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">Registration</span></span>
                 </td>
                 <td class="white td-style"><div>
                     <ul style="list-style: none; line-height: 120%">
-                        <li>Aviwe Ntloko</li>
-                        <li>ID Number: 8507310000000</li>
+                        <li>{{ patient_list[i].firstname}} {{ patient_list[i].lastname}}</li>
+                        <li>ID Number: {{ patient_list[i].id_number }}</li>
                     </ul>   
                     
                         
                 </div></td>
-                <td class="white td-style" style="text-align: center">072 876 1234</td>
+                <td class="white td-style" style="text-align: center">{{ patient_list[i].contact_number }}</td>
                 <td class="white td-style">
                     <ul style="list-style: none; line-height: 120%; text-align: center">
-                        <li>{{ patient.logged_by }}</li>
-                        <li>at 7:21am</li>
+                        <li>{{ patient_list[i].logged_by }}</li>
+                        <li>at {{ patient_list[i].logged_time }}</li>
                     </ul>
                     
                 </td>
