@@ -52,9 +52,13 @@ def index():
     form = LoginForm()
     return render_template("index.html", form=form)
 
-@app.route('/queue', methods=["GET", "POST"])
+@app.route('/queues', methods=["GET", "POST"])
 def queue():
     return render_template("queue.html", patient_list=patient_list)
+
+@app.route('/add-patient', methods=["GET", "POST"])
+def add():
+    return render_template("add.html")
 
 @app.route('/login', methods=["GET", "POST"] )
 def login():
