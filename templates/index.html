@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="icon" href="../static/images/blue-favicon.png">
+    <link rel="icon" href="../static/images/favicon.png">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>mediQ</title>
     <style>
@@ -64,7 +64,7 @@
 </head>
 <body>
     <div class="main-container">
-        <div  class="white-text medi-text"><img style="width:25px; height: 30px; margin-top: 40px; margin-right: 8px" src="../static/images/favicon.png" alt="Clock"><h3>medi<strong>Q</strong></h3></div>
+        <div  class="white-text medi-text"><img style="width:25px; height: 30px; margin-top: 40px; margin-right: 8px" src="../static/images/Group.png" alt="Clock"><h3>medi<strong>Q</strong></h3></div>
         <div class="right-text">
             New hospital? <u>Contact us</u>
         </div>
@@ -72,17 +72,16 @@
             <h4>Staff login</h4>
         </div>
         <div class="form-home">
-        <form action="">
-            <label for="hospital" class="white-text text-form">Enter Your Hospital</label>
-            <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="hospital" class="hospital" placeholder="e.g. Steve Biko Academic">
-            <label for="staff" class="white-text text-form">Your Staff Code</label>
-            <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="staff" class="staff" placeholder="e.g. 827203434">
-            <label for="password" class="white-text text-form">Your Password</label>
-            <input style="color: rgb(14, 74, 88); background-color: white" type="password" id="password" class="password" placeholder="**************">
-            <br>
-            <button type="submit" id="btn-login" style="border-radius: 30px; color: rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 348px; height: 40px">Login</button>
-        </form>
-        </div>
+            <form action="/" method="POST">
+                <label for="hospital" class="white-text text-form">Enter Your Hospital</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="hospital" class="hospital" placeholder="e.g. Steve Biko Academic">
+                <label for="staff" class="white-text text-form">Your Staff Code</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="staff" class="staff" placeholder="e.g. 827203434">
+                <label for="password" class="white-text text-form">Your Password</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="password" id="password" class="password" placeholder="**************">
+                <br>
+                <button type="submit" id="btn-login" style="border-radius: 30px; color: rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 348px; height: 40px">Login</button>
+            </form>
     </div>
 </body>
 </html>
