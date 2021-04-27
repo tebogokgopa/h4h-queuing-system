@@ -67,7 +67,7 @@ def reg():
     for x in patient_list:
         if x.queue.casefold() == "Registration".casefold():
             registration_queue.append(x)
-    return render_template('registration.html',len = len(registration_queue), registration_queue=registration_queue)
+    return render_template('registration.html', len = len(registration_queue), registration_queue=registration_queue)
 
 @app.route('/queues/vitals', methods=["GET", "POST"])
 def vitals():
@@ -108,3 +108,7 @@ def add():
 @app.route('/logout', methods=["GET", "POST"])
 def logout():
     return redirect("/")
+
+@app.route('/contact', methods=["GET", "POST"])
+def contact():
+    return render_template("contact.html")
