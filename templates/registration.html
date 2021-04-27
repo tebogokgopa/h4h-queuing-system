@@ -108,21 +108,21 @@
             {% for i in range(0, len) %}
             <tr>
                 <td class="white">
-                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">{{ patient_list[i].queue }}</span></span>
+                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center">{{ registration_queue[i].queue }}</span></span>
                 </td>
                 <td class="white td-style"><div>
                     <ul style="list-style: none; line-height: 120%">
-                        <li>{{ patient_list[i].firstname}} {{ patient_list[i].lastname}}</li>
-                        <li>ID Number: {{ patient_list[i].id_number }}</li>
+                        <li>{{ registration_queue[i].firstname}} {{ registration_queue[i].lastname}}</li>
+                        <li>ID Number: {{ registration_queue[i].id_number }}</li>
                     </ul>   
                     
                         
                 </div></td>
-                <td class="white td-style" style="text-align: center">{{ patient_list[i].contact_number }}</td>
+                <td class="white td-style" style="text-align: center">{{ registration_queue[i].contact_number }}</td>
                 <td class="white td-style">
                     <ul style="list-style: none; line-height: 120%; text-align: center">
-                        <li>{{ patient_list[i].logged_by }}</li>
-                        <li>at {{ patient_list[i].logged_time }}</li>
+                        <li>{{ registration_queue[i].logged_by }}</li>
+                        <li>at {{ registration_queue[i].logged_time }}</li>
                     </ul>
                     
                 </td>

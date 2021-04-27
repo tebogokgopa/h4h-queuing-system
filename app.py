@@ -55,7 +55,7 @@ def index():
 
 @app.route('/queues', methods=["GET", "POST"])
 def queue():
-    return render_template('queues.html',len = len(patient_list), patient_list=patient_list)
+    return render_template('queues.html', len = len(patient_list), patient_list=patient_list)
 
 @app.route('/add-patient', methods=["GET", "POST"])
 def add():
