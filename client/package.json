@@ -10,7 +10,7 @@
     "url": ""
   },
   "dependencies": {
-    "my_dep": "^1.0.0",
+    "http-proxy-middleware": "^1.0.0",
   },
   "keywords": [],
   "author": "",
