@@ -9,6 +9,9 @@
     "type": "git",
     "url": ""
   },
+  "dependencies": {
+    "my_dep": "^1.0.0",
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
