@@ -111,4 +111,5 @@ def logout():
 
 @app.route('/contact', methods=["GET", "POST"])
 def contact():
-    return render_template("contact.html")
+    x = staff_list[0]
+    return render_template("contact.html", user=x)
