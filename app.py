@@ -19,6 +19,12 @@ class Patient:
         self.queue = queue 
         self.logged_time = logged_time
 
+    def __lt__(self, other):
+        if self.logged_by < other.logged_by:
+            return other
+        else:
+            return self
+
 
 class Staff:
     def __init__(self, firstname="", lastname="", contact_number="", hospital_code="", staff_code="", password=""):
@@ -42,8 +48,12 @@ staff_1 = Staff("Lee-Anne", "Matthews", "080000000", "G29350GP", "AA78291", "123
 staff_2 = Staff("Roger", "Hendricks", "0700000000", "G23423EC", "AA79234", "12345")
 staff_3 = Staff("David", "Madison", "0600000000", "G23235KZN", "AA23523", "12345")
 
+
 patient_list = [patient_1, patient_2, patient_3, patient_4, patient_5]
 staff_list = [staff_1, staff_2, staff_3]
+
+new_list = sorted(patient_list)
+    
 
 @app.route('/', methods=["GET", "POST"])
 def index():
