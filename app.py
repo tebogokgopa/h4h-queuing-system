@@ -64,43 +64,48 @@ def queue():
 
 @app.route('/queues/registration', methods=["GET", "POST"])
 def reg():
+    x = staff_list[0]
     registration_queue = []
     for x in patient_list:
         if x.queue.casefold() == "Registration".casefold():
             registration_queue.append(x)
-    return render_template('registration.html', len = len(registration_queue), registration_queue=registration_queue)
+    return render_template('registration.html', user=x, len = len(registration_queue), registration_queue=registration_queue)
 
 @app.route('/queues/vitals', methods=["GET", "POST"])
 def vitals():
+    x = staff_list[0]
     vitals_queue = []
     for x in patient_list:
         if x.queue.casefold() == "Vital Signs".casefold():
             vitals_queue.append(x)
-    return render_template('vitals.html', len = len(vitals_queue), vitals_queue=vitals_queue)
+    return render_template('vitals.html', user=x, len = len(vitals_queue), vitals_queue=vitals_queue)
 
 @app.route('/queues/consultation', methods=["GET", "POST"])
 def consultation():
+    x = staff_list[0]
     consultation_queue = []
     for x in patient_list:
         if x.queue.casefold() == "Doctor’s consultation".casefold():
             consultation_queue.append(x)
-    return render_template('consultation.html', len = len(consultation_queue), consultation_queue=consultation_queue)
+    return render_template('consultation.html', user=x, len = len(consultation_queue), consultation_queue=consultation_queue)
 
 @app.route('/queues/pharmacy', methods=["GET", "POST"])
 def pharmacy():
+    x = staff_list[0]
     pharmacy_queue = []
     for x in patient_list:
         if x.queue.casefold() == "Pharmacy".casefold():
             pharmacy_queue.append(x)
-    return render_template('pharmacy.html', len = len(pharmacy_queue), pharmacy_queue=pharmacy_queue)
+    return render_template('pharmacy.html', user=x, len = len(pharmacy_queue), pharmacy_queue=pharmacy_queue)
 
 @app.route('/queues/other', methods=["GET", "POST"])
 def other():
+    x = staff_list[0]
     other_queue = []
     for x in patient_list:
         if x.queue.casefold() == "Other".casefold():
             other_queue.append(x)
-    return render_template('other.html',len = len(other_queue), other_queue=other_queue)
+    return render_template('other.html', user=x, len = len(other_queue), other_queue=other_queue)
 
 @app.route('/add-patient', methods=["GET","POST"])
 def add():
