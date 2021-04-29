@@ -134,14 +134,14 @@ def contact():
 @app.route('/move-up', methods=["GET", "POST"])
 def moveup():
     x = staff_list[0]
-    return redirect('/queues', user=x, patient_list=patient_list)
+    return render_template('queues.html', len=len(patient_list), user=x, patient_list=patient_list)
 
 @app.route('/move-down', methods=["GET", "POST"])
 def movedown():
     x = staff_list[0]
-    return redirect('/queues', user=x, patient_list=patient_list)
+    return render_template('queues.html', len=len(patient_list), user=x, patient_list=patient_list)
 
 @app.route('/remove/{firstname}', methods=["GET", "POST"])
 def remove():
     x = staff_list[0]
-    return redirect('/queues', user=x, patient_list=patient_list)
+    return render_template('queues.html', len=len(patient_list), user=x, patient_list=patient_list)
