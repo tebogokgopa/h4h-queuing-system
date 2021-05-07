@@ -16,9 +16,9 @@ app.config['FLASK_ENV'] = os.environ.get('FLASK_ENV')
 
 db = SQLAlchemy(app)
 
-
-
 Session(app)
+
+db.create_all()
 
 class Patient:
     def __init__(self, firstname="", lastname="", id_number="", contact_number="", logged_by="", queue="", logged_time=""):
