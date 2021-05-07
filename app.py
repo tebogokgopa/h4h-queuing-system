@@ -1,11 +1,19 @@
 from flask import Flask, render_template, request, session, redirect
 from flask_session import Session
+from flask_sqlalchemy import SQLAlchemy
+
+import os
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFm65r3XmYKWjw3Vs'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT']= False
+app.config['DATABASE_URL'] = os.environ.get('DATABASE_URL')
+
+db = SQLAlchemy(app)
+
+
 
 Session(app)
 
