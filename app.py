@@ -9,9 +9,10 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFm65r3XmYKWjw3Vs'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT']= False
-app.config['DATABASE_URL'] = os.environ.get('DATABASE_URL')
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['FLASK_APP'] = os.environ.get('FLASK_APP')
 app.config['FLASK_ENV'] = os.environ.get('FLASK_ENV')
+
 
 db = SQLAlchemy(app)
 
