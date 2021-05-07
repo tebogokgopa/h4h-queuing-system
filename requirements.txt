@@ -3,3 +3,6 @@ Flask-Login
 Flask-WTF
 Flask-Session
 Flask-SQLAlchemy
+Flask-Migrate
+MySQL
+mysql-connector-python

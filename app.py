@@ -2,7 +2,9 @@ from flask import Flask, render_template, request, session, redirect
 from flask_session import Session
 from flask_sqlalchemy import SQLAlchemy
 
+
 import os
+import mysql.connector
 
 app = Flask(__name__)
 
