@@ -12,13 +12,25 @@ app.config['SESSION_PERMANENT']= False
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
 app.config['FLASK_APP'] = os.environ.get('FLASK_APP')
 app.config['FLASK_ENV'] = os.environ.get('FLASK_ENV')
-
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(80), unique=True, nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.username
+
+
 
 Session(app)
 
 db.create_all()
+
+
 
 class Patient:
     def __init__(self, firstname="", lastname="", id_number="", contact_number="", logged_by="", queue="", logged_time=""):
