@@ -108,7 +108,7 @@
             {% for i in range(0, len) %}
             <tr>
                 <td class="white">
-                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center; word-break: normal">{{ patient_list[i].queue }}</span></span>
+                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="justify-content: center; word-wrap: break-word">{{ patient_list[i].queue }}</span></span>
                 </td>
                 <td class="white td-style"><div>
                     <ul style="list-style: none; line-height: 120%">
