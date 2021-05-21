@@ -1,22 +1,17 @@
 from flask import Flask, render_template, request, session, redirect
 from flask_session import Session
-from flask_sqlalchemy import SQLAlchemy
-
 
 import os
-import mysql.connector
+
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'u8sAAN1FngnOJzKp-fME8NpDUfFm65r3XmYKWjw3Vs'
 app.config['SESSION_TYPE'] = 'filesystem'
 app.config['SESSION_PERMANENT']= False
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL')
+
 app.config['FLASK_APP'] = os.environ.get('FLASK_APP')
 app.config['FLASK_ENV'] = os.environ.get('FLASK_ENV')
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
 
 class User(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
@@ -30,7 +25,6 @@ class User(db.Model):
 
 Session(app)
 
-db.create_all()
 
 
 
