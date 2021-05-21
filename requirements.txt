@@ -2,6 +2,3 @@ Flask
 Flask-Login
 Flask-WTF
 Flask-Session
-Flask-SQLAlchemy
-MySQL
-mysql-connector-python
