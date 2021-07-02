@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" href="../static/images/blue-favicon.png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> 
+    <title>mediQ | Queue</title>
+    <style>
+        .main-nav {
+            color: rgb(14, 74, 88);
+        }
+
+        .medi-text-blue {
+            color: rgb(14, 74, 88);
+            margin-bottom: 40px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .id-number {
+            margin-top: -80px;
+        }
+
+        .tbl-txt {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .td-style {
+            line-height: 81px;
+        }
+
+        .main-table {
+            background-color: #f9f9f9;
+            width: 90%;
+            margin-left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav main-nav white">
+        <ul>
+            <li class="nav-item">
+                <div  class="medi-text-blue"><img style="width:25px; height: 30px; margin-top: 20px; margin-left: 12px" src="../static/images/blue-favicon.png" alt="Clock"><h4 style="margin-top: 12px; padding: 4px;">medi<strong>Q</strong></h4></div>
+            </li>
+            <div class="right-wrapper" style="display: flex; flex-direction: column">
+                <li class="nav-item" style="margin-left: 540px">
+                    <span><strong style="margin-left: 72px; margin-right: -80px;">{{ user.firstname }} {{ user.lastname }} ({{ user.staff_code }})</strong>
+                       <button type="button" style="border-radius: 30px; color: rgb(14, 74, 88); border: 1px solid rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 120px; margin-top: -80px; height: 40px">
+                        <a href="/logout" style="color: rgb(14, 74, 88); font-weight: bold">Logout</a>
+                    </button></span>
+                </li>
+            </div>
+            
+        </ul>
+    </nav>
+    <br>
+    <br>
+    <div style="margin-top: 40px; padding: 10px; margin-left: 80px;">
+        <span><h4 style="color:rgb(14, 74, 88); display: inline; margin-right: -80px">Queue</h4><a href="/add-patient"><button type="button" style="border-radius: 30px; color: white; border: 1px solid white; background-color: rgb(14, 74, 88); width: 157px; margin-left: 880px; margin-top: -80px; height: 30px">
+            + Add Patient
+        </button></a></span>
+    </div>
+    <br>
+    <div class="row" style="display: flex; flex-direction: row; margin-left: 80px">
+        <a href="/queues"><button type="button" style="border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+            <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><span class="black-text" style="padding-left: 4px; justify-content: center">All</span></span>
+        </button></a>
+        <a href="/queues/registration"><button type="button" style=" border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+           <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">account_circle</i><span class="grey-text" style="padding-left: 4px; justify-content: center">Registration</span></span>
+        </button></a>
+        <a href="/queues/vitals"><button type="button" style="border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+            <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">offline_pin</i><span class="grey-text" style="padding-left: 4px; justify-content: center">Vital Signs</span></span>
+        </button></a>
+        <a href="/queues/consultation"><button type="button" style="border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+            <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">people</i><span class="grey-text" style="padding-left: 4px; justify-content: center">Doctor's consultation</span></span>
+        </button></a>
+        <a href="/queues/pharmacy"><button type="button" style="border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+            <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">loupe</i><span class="grey-text" style="padding-left: 4px; justify-content: center">Pharmacy</span></span>
+        </button></a>
+        <a href="/queues/other"><button type="button" style="border-radius: 30px; color: rgb(14, 74, 88);; border: 1px solid rgb(14, 74, 88);; background-color:white; width: 157px; margin-left: 20px; height: 48px">
+            <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">info</i><span class="grey-text" style="padding-left: 4px; justify-content: center">Other</span></span>
+        </button></a>
+        
+    </div>
+
+    <div class="row">
+       <p class="top-table" align="left" style="margin-left: 80px;">1 Patient in the queue | Average waiting time of 20 minutes</p><p class="grey-text" style="display: flex; justify-content: center; align-items: center; margin-left: 900px; bottom: 160px;"><i class="material-icons">expand_less</i><a href="/move-up">Move up</a>&nbsp;&nbsp;&nbsp;<i class="material-icons">expand_more</i><a href="/move-up">Move down</a>&nbsp;&nbsp;&nbsp;<i class="material-icons">delete</i><a href="/remove">Remove from queue</a></p>
+       <table class="main-table responsive-table">
+            <tr>
+                
+                    <th><strong class="tbl-txt">Queue</strong></th>
+                    <th><strong class="tbl-txt">Patient</strong></th>
+                    <th><strong class="tbl-txt">Contact Number</strong></th>
+                    <th colspan="2"><strong class="tbl-txt">Logged by</strong></th>
+                
+            </tr>
+            {% for i in range(0, len) %}
+            <tr>
+                <td class="white">
+                    <span style="display:flex; flex-direction: row; justify-content: center; align-items: center"><i class="small material-icons">check_circle</i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="small material-icons">account_circle</i><span class="grey-text" style="display: flex; justify-content: center; flex-wrap: wrap">{{ patient_list[i].queue }}</span></span>
+                </td>
+                <td class="white td-style"><div>
+                    <ul style="list-style: none; line-height: 120%">
+                        <li>{{ patient_list[i].firstname}} {{ patient_list[i].lastname}}</li>
+                        <li>ID Number: {{ patient_list[i].id_number }}</li>
+                    </ul>   
+                    
+                        
+                </div></td>
+                <td class="white td-style" style="text-align: center">{{ patient_list[i].contact_number }}</td>
+                <td class="white td-style">
+                    <ul style="list-style: none; line-height: 120%; text-align: center">
+                        <li>{{ patient_list[i].logged_by }}</li>
+                        <li>at {{ patient_list[i].logged_time }}</li>
+                    </ul>
+                    
+                </td>
+                
+                <td class="white td-style"><i class="material-icons">crop_square</i></td>
+            </tr>
+            {% endfor %}
+       </table> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" href="../static/images/blue-favicon.png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <title>mediQ</title>
+    <style>
+
+        .medi-text {
+            font-family: Roboto;
+            font-size: 24px;
+            margin-left: 40px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        title {
+            font-family: Roboto;
+        }
+
+        body {
+            font-family: Roboto;
+            position: absolute;
+            
+
+            background-image: url('../static/images/bg.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            background-color: rgba(14, 74, 88, 0.5)
+        }
+
+        .right-text {
+            margin-left: 1080px;
+            color: white;
+            margin-top: -48px;
+        }
+
+        .staff-text {
+            color: white;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .form-home {
+            display: flex;
+            flex-direction: column;
+            width: 44%;
+            margin-left: 440px;
+            background-color: rgba(14, 74, 88, 0.4);
+            padding: 24px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .text-form {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div  class="white-text medi-text"><img style="width:25px; height: 30px; margin-top: 40px; margin-right: 8px" src="../static/images/favicon.png" alt="Clock"><h3>medi<strong>Q</strong></h3></div>
+        <div class="right-text">
+            New hospital? <u><a href="/contact">Contact Us</a></u>
+        </div>
+        <div class="staff-text">
+            <h4>Staff login</h4>
+        </div>
+        <div class="form-home">
+            <form action="/" method="POST">
+                <label for="hospital" class="white-text text-form">Enter Your Hospital</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="hospital" class="hospital" placeholder="e.g. Steve Biko Academic">
+                <label for="staff" class="white-text text-form">Your Staff Code</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="text" id="staff" class="staff" placeholder="e.g. 827203434">
+                <label for="password" class="white-text text-form">Your Password</label>
+                <input style="color: rgb(14, 74, 88); background-color: white" type="password" id="password" class="password" placeholder="**************">
+                <br>
+                <button type="submit" id="btn-login" style="border-radius: 30px; color: rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 348px; height: 40px">Login</button>
+            </form>
+    </div>
+</body>
+</html>

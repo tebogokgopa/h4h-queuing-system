@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="icon" href="../static/images/blue-favicon.png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"> 
+    <title>mediQ | Add Patient</title>
+    <style>
+        .main-nav {
+            color: rgb(14, 74, 88);
+        }
+
+        .medi-text-blue {
+            color: rgb(14, 74, 88);
+            margin-bottom: 40px;
+            margin-left: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .id-number {
+            margin-top: -80px;
+        }
+
+        .tbl-txt {
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        th {
+            text-align: center;
+        }
+
+        .add-form {
+            background-color: rgba(249, 249, 249, 0.8);
+            width: 40%;
+            margin-left: 480px;
+            padding: 40px;
+            color: black;
+        }
+
+        .form-label {
+            color: black;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .td-style {
+            line-height: 81px;
+        }
+
+        .main-table {
+            background-color: #f9f9f9;
+            width: 90%;
+            margin-left: 80px;
+        }
+
+        .btn-save {
+            background-color: rgb(14, 74, 88);
+            color: white;
+            width: 75px;
+            height: 49px;
+            border-radius: 8px;
+            border: 1px solid white;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav main-nav white">
+        <ul>
+            <li class="nav-item">
+                <div  class="medi-text-blue"><img style="width:25px; height: 30px; margin-top: 20px; margin-left: 12px" src="../static/images/blue-favicon.png" alt="Clock"><h4 style="margin-top: 12px; padding: 4px;">medi<strong>Q</strong></h4></div>
+            </li>
+            <div class="right-wrapper" style="display: flex; flex-direction: column">
+                <li class="nav-item" style="margin-left: 540px">
+                    <span><strong style="margin-left: 72px; margin-right: -80px;">{{ user.firstname }} {{ user.lastname }} ({{ user.staff_code }})</strong>
+                        <button type="button" style="border-radius: 30px; color: rgb(14, 74, 88); border: 1px solid rgb(14, 74, 88); background-color: white; width: 30%; margin-left: 120px; margin-top: -80px; height: 40px">
+                        Logout
+                    </button></span>
+                </li>
+            </div>
+            
+        </ul>
+    </nav>
+    <br>
+    <div class="row">
+        <div style="display: flex; flex-direction: row; justify-content: center; align-items:center; margin-right: 160px; margin-left: -80px;"><a style="color: rgb(14, 74, 88); margin-top: 20px; margin-right: 40px; text-align: left" href="/queues"><i class="material-icons left">arrow_back</i>Back to Queues</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<h5 style="display: inline; margin-top: 20px; padding: 10px">Add Patient</h5></div>
+    </div>
+    <form action="/add-patient" class="add-form">
+        <label class="form-label" for="patient-name">Patient First Name</label>
+        <input class="input-field" type="text" name="patient_firstname" id="patient_firstname">
+        <label class="form-label" for="patient_lastname">Patient Last Name</label>
+        <input class="input-field" type="text" name="patient_lastname" id="patient_lastname">
+        <br>
+        <label for="radio_opt" class="form-label">ID Type</label>
+        <div class="radio-group">
+            <label for="id_doc">
+                <input value="ID Document" name="id_doc" id="id_doc" type="radio"  />
+                <span>ID Document</span>
+            </label>
+
+            <label for="id_pass">
+                <input value="Passport" name="id_pass" id="id_pass" type="radio"  />
+                <span>Passport</span>
+            </label>
+        </div>
+        <br>
+        <label for="id_number" class="form-label">ID Number</label>
+        <input type="number" name="id_number" id="id_number">
+        <br>
+        <label for="radio_opt" class="form-label">Queue</label>
+        <div class="radio-group">
+            <label for="reg">
+                <input value="Registration" name="reg" id="reg" type="radio"  />
+                <span>Registration</span>
+            </label>
+
+            <label for="vital">
+                <input value="Vital Signs" name="vital" id="vital" type="radio"  />
+                <span>Vital Signs</span>
+            </label>
+
+            <label for="doc">
+                <input value="Doctor's Consultation" name="doc" id="doc" type="radio"  />
+                <span>Doctor's Consultation</span>
+            </label>
+
+            <label for="pharm">
+                <input value="Pharmacy" name="pharm" id="pharm" type="radio"  />
+                <span>Pharmacy</span>
+            </label>
+
+            <label for="other">
+                <input value="Other" name="other" id="other" type="radio"  />
+                <span>Other</span>
+            </label>
+        </div>
+        <br>
+        <button type="submit" class="right btn-save">Save</button>
+    </form>
+</body>
+</html>

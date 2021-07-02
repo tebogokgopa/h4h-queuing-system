@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/images/favicon.png" type="image/png">
+    <base href="/" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <script>
+        var images = [ 
+    "../static/images/pic.jpg",
+    "../static/images/pic-1.jpg", 
+    "../static/images/pic-2.jpg"
+        ];
+        var num = 0;
+        function next() {
+            var slider = document.getElementById('imgHome');
+            num++;
+            if(num >= images.length) {
+                num = 0;
+            }
+            slider.src = images[num];
+        }
+        function prev() {
+            var slider = document.getElementById('imgHome');
+            num--;
+            if(num < 0) {
+                num = images.length-1;
+            }
+            slider.src = images[num];
+        }
+
+
+    </script>
+    
+    <!-- Google Materalize fonts -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>i-Queued | Easy Access to Healthcare</title>
+</head>
+<body>
+    {% block body %} 
+    {% endblock %}
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>
